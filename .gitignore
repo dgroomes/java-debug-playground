@@ -5,3 +5,6 @@
 build
 
 .idea/
+
+# Java Flight Recordings
+*.jfr

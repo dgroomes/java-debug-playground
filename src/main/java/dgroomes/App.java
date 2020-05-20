@@ -10,8 +10,8 @@ public class App {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(App.class);
 
-    public static final int ITERATIONS = 3;
-    public static final int SLEEP_MILLIS = 1000;
+    public static final int DEFAULT_ITERATIONS = 100;
+    public static final int SLEEP_MILLIS = 100;
     public static final Random rand = new Random(0);
 
     /**
@@ -31,12 +31,21 @@ public class App {
 
     public static void main(String[] args) throws InterruptedException {
         var start = Instant.now();
+        int iterations;
+        if (args.length > 0) {
+            var arg = args[0];
+            log.debug("Detected argument for 'iterations': {}", arg);
+            iterations = Integer.parseInt(arg);
+        } else {
+            iterations = DEFAULT_ITERATIONS;
+        }
         var app = new App();
-        log.debug("Executing {} iterations. Calls to blockingMethod sleep for {} milliseconds", ITERATIONS, SLEEP_MILLIS);
-        for (int i = 0; i < ITERATIONS; i++) {
-            app.fastComputeMethod();
+        log.debug("Executing {} iterations. Calls to blockingMethod sleep for {} milliseconds", iterations, SLEEP_MILLIS);
+        for (int i = 0; i < iterations; i++) {
+            for (int j = 0; j < iterations; j++) {
+                app.fastComputeMethod();
+            }
             app.blockingMethod();
-            app.fastComputeMethod();
         }
         var end = Instant.now();
         var duration = Duration.between(start, end);
