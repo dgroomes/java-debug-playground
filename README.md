@@ -2,11 +2,11 @@
 
 NOT YET IMPLEMENTED
 
-Learning and exploring debugging and profiling tools in Java, the Java toolchain and the Java ecosystem.
+📚 Learning and exploring debugging and profiling tools in Java, the Java toolchain and the Java ecosystem.
 
 ### Instructions
 
-* Use Java 14
+* Use Java 15
 * Run with `./gradlew run` 
 
 ### Wish List
