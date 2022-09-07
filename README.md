@@ -6,8 +6,14 @@ NOT YET IMPLEMENTED
 
 ### Instructions
 
-* Use Java 15
-* Run with `./gradlew run` 
+Follow these instructions to build and run the demo program: 
+
+1. Use Java 17
+2. Build and run the program:
+   * ```shell
+     ./gradlew run
+     ``` 
+
 
 ### Wish List
 
@@ -15,7 +21,8 @@ Things I wish for!
 
 * Implement some examples using Java Flight Recording
   * As a reference, use <https://github.com/dgroomes/wiremock-playground/blob/ecf7f4b7490a28f2df6ce01489d52e881d30cd76/docs/CONTRIBUTING.md>
-  
+
+
 ### Notes
 
 Build a distribution: `./gradlew installDist`
